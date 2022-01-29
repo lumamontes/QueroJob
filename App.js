@@ -7,6 +7,7 @@ import {
 import Landing from './src/screens/Landing';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
+import Home from './src/screens/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,12 @@ function App() {
           component={Register}  
           options={{ title: 'Criar conta'}}
           />
+          <Stack.Screen 
+          name="Home" 
+          component={Home}  
+          options={{
+            headerShown: false,
+          }}          />
         </Stack.Navigator>
 
       </NavigationContainer> 

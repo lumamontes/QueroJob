@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {
-    Button, View, Text, SafeAreaView,
+    View, Text, SafeAreaView,
     TextInput, ActivityIndicator, TouchableOpacity, StyleSheet, StatusBar
 } from 'react-native';
-import { Formik, Field, FormikProps } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Entypo } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
@@ -40,18 +40,18 @@ export default function Register({ navigation }) {
                             setTimeout(() => {
                                 actions.setSubmitting(false);
                             }, 1000);
-                            console.log(values, areas)
+                            console.log(values)
                         }}
                         validationSchema={validationSchema}
                     >
                         {(formikProps,) => (
                             <React.Fragment>
                                 <TextInput
-                                    name="nome"
+                                    name="name"
                                     placeholder="Nome"
                                     style={styles.textInput}
                                     onChangeText={formikProps.handleChange('name')}
-                                    // onBlur={formikProps.handleBlur('email')}
+                                    onBlur={formikProps.handleBlur('email')}
                                     value={formikProps.name}
                                 />
                                 <Text style={{ color: 'red' }}>{formikProps.errors.name}</Text>
@@ -100,8 +100,6 @@ export default function Register({ navigation }) {
                             </React.Fragment>
                         )}
                     </Formik>
-
-
                 </View>
                 <View style={styles.link_container}>
                     <Text>Já possui conta?                       

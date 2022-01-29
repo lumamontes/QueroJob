@@ -9,17 +9,19 @@ import {
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins'
 
+import { 
+    Roboto_700Bold,
+  } from '@expo-google-fonts/roboto'
 import {
   Rubik_700Bold,
 } from '@expo-google-fonts/rubik'
-
-import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export default function Landing({ navigation }) {
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,
     Poppins_400Regular,
-    Rubik_700Bold
+    Rubik_700Bold,
+    Roboto_700Bold
   });
   if (!fontsLoaded) {
     return <AppLoading />;
@@ -37,7 +39,7 @@ export default function Landing({ navigation }) {
           <Text style={{ color: '#1E5128', fontSize: 48, fontFamily: 'Rubik_700Bold' }} >Trilhe seu futuro profissional</Text>
         </View>
           <TouchableOpacity style={styles.startButton} onPress={() => navigation.navigate('Login')}>
-            <Text style={{ color: 'white', fontSize: 26, fontFamily: 'Poppins_400Regular' }}>Começar</Text>
+            <Text style={{ color: 'white', fontSize: 24, fontFamily: 'Roboto_700Bold' }}>Começar</Text>
             <AntDesign name="right" size={24} color="#F1F1F1" />
           </TouchableOpacity>
           <StatusBar style="auto" />

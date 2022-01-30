@@ -3,14 +3,10 @@ import {
     View, Text, SafeAreaView,
     TextInput, ActivityIndicator, TouchableOpacity, StyleSheet, Image
 } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import ProfileCard from '../../components/ProfileCard';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { Entypo } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 
-import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 const areas = ['Desenvolvimento', 'Comercial'];
 
 const validationSchema = yup.object().shape({
@@ -42,7 +38,7 @@ export default function Profile({ navigation }) {
             </View>
             <View style={styles.form_container}>
                 <Formik
-                    initialValues={{ name: '', email: '', password: '', area: '' }}
+                    initialValues={{ name: 'Bruna Ferreira', email: 'brunaferreira@gmail.com', area: '' }}
                     onSubmit={(values, actions) => {
                         setTimeout(() => {
                             actions.setSubmitting(false);
@@ -53,6 +49,7 @@ export default function Profile({ navigation }) {
                 >
                     {(formikProps,) => (
                         <React.Fragment>
+                            <Text style={styles.label_form}>Nome</Text>
                             <TextInput
                                 name="name"
                                 placeholder="Nome"
@@ -62,6 +59,7 @@ export default function Profile({ navigation }) {
                                 value={formikProps.name}
                             />
                             <Text style={{ color: 'red' }}>{formikProps.errors.name}</Text>
+                            <Text style={styles.label_form}>Email</Text>
                             <TextInput
                                 name="email"
                                 placeholder="Email"
@@ -72,19 +70,8 @@ export default function Profile({ navigation }) {
                                 keyboardType="email-address"
                             />
                             <Text style={{ color: 'red' }}>{formikProps.errors.email}</Text>
-                            <View style={styles.searchSection}>
-                                <TextInput
-                                    name="password"
-                                    placeholder="Senha"
-                                    style={styles.input}
-                                    onChangeText={formikProps.handleChange('password')}
-                                    // onBlur={formikProps.handleBlur('password')}
-                                    value={formikProps.password}
-                                    secureTextEntry={true}
-                                />
-                                <Entypo style={styles.showIcon} name="eye-with-line" size={24} color="#727272" />
-                            </View>
-                            <Text style={{ color: 'red' }}>{formikProps.errors.password}</Text>
+
+                            <Text style={styles.label_form}>Área</Text>
                             <Picker
                                 mode={'dropdown'}
                                 placeholder={{ label: "Select you favourite language", value: null }}
@@ -149,24 +136,7 @@ const styles = StyleSheet.create({
         width: '80%',
         marginTop: 40
     },
-    options_cards: {
-        marginBottom: 20,
-    },
     textInput: {
-        height: 52,
-        width: '100%',
-        color: '#727272',
-        backgroundColor: 'white',
-        borderWidth: 0,
-        borderRadius: 8,
-        padding: 10
-    },
-
-    searchSection: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fff',
         height: 52,
         width: '100%',
         color: '#727272',
@@ -181,37 +151,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         color: '#424242',
     },
-    register_button: {
-        backgroundColor: '#1E5128',
-        height: 52,
-        width: '100%',
-        borderRadius: 6,
-        padding: 10,
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: 30,
-    },
-    text_button_register: {
-        fontSize: 18,
-        color: '#F1F1F1',
-        fontWeight: 'bold',
-        fontFamily: 'Roboto_700Bold',
-        textAlign: 'center'
-    },
     pickerStyles: {
         width: '100%',
         backgroundColor: '#fff',
         color: '#424242'
-    },
-    link_container: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    url_login:{
-        color: '#4E9F3D',
-        fontWeight: 'bold'
     },
     button_container:{
         borderTopColor: '#E3E3E3',
@@ -238,5 +181,11 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+      },
+      label_form:{
+          color: '#727272',
+          fontSize: 16,
+          fontFamily: 'Roboto_400Regular',
+          marginBottom: 5
       }
 });

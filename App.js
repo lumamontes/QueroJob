@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer,getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -13,7 +13,20 @@ import Profile from './src/screens/Profile';
 import EditProfile from './src/screens/Profile/edit';
 import { FontAwesome, FontAwesome5} from '@expo/vector-icons'; 
 
-
+function getHeaderTitle(route) {
+  // If the focused route is not found, we need to assume it's the initial screen
+  // This can happen during if there hasn't been any navigation inside the screen
+  // In our case, it's "Feed" as that's the first screen inside the navigator
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+  switch (routeName) {
+    case 'Feed':
+      return 'News feed';
+    case 'Profile':
+      return 'My profile';
+    case 'Account':
+      return 'My account';
+  }
+}
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -107,9 +120,9 @@ function App() {
           <Stack.Screen 
             name="Home" 
             component={Tabs}  
-            options={{
-              headerShown: false,
-            }}          
+            options={({ route }) => ({
+              headerTitle: getHeaderTitle(route), headerShown: false,
+            })}     
           />
           <Stack.Screen 
             name="EditProfile" 

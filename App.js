@@ -10,7 +10,9 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Home from './src/screens/Home';
 import Profile from './src/screens/Profile';
+import EditProfile from './src/screens/Profile/edit';
 import { FontAwesome, FontAwesome5} from '@expo/vector-icons'; 
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -108,6 +110,13 @@ function App() {
             options={{
               headerShown: false,
             }}          
+          />
+          <Stack.Screen 
+            name="EditProfile" 
+            component={EditProfile}  
+            options={{ title: 'Editar perfil'}}
+            headerTint
+        
           />
         </Stack.Navigator>
 

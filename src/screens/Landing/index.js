@@ -11,6 +11,7 @@ import {
 
 import { 
     Roboto_700Bold,
+    Roboto_400Regular,
   } from '@expo-google-fonts/roboto'
 import {
   Rubik_700Bold,
@@ -21,7 +22,8 @@ export default function Landing({ navigation }) {
     Poppins_700Bold,
     Poppins_400Regular,
     Rubik_700Bold,
-    Roboto_700Bold
+    Roboto_700Bold,
+    Roboto_400Regular
   });
   if (!fontsLoaded) {
     return <AppLoading />;

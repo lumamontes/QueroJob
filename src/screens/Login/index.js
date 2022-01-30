@@ -23,7 +23,7 @@ export default function Login({navigation }) {
         <>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView style={styles.container}>
-                <View style={styles.loginContainer}>
+                    <View style={styles.loginContainer}>
                     <Text style={{ color: '#4E9F3D', fontSize: 36, fontFamily: 'Poppins_700Bold' }} >QueroJob</Text>
                     <Formik
                         initialValues={{ email: '', password: '' }}
@@ -64,7 +64,8 @@ export default function Login({navigation }) {
                                 {formikProps.isSubmitting ? (
                                     <ActivityIndicator size="small" color="#4E9F3D" />
                                 ) : (
-                                    <TouchableOpacity title="Submit" onPress={formikProps.handleSubmit} style={
+                                    // <TouchableOpacity title="Submit" onPress={formikProps.handleSubmit} style={
+                                        <TouchableOpacity title="Submit" onPress={() => navigation.navigate('Home')} style={
                                         styles.login_button
                                     }>
                                         <Text style={styles.text_button}>Entrar</Text>

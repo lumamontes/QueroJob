@@ -11,6 +11,8 @@ import Register from './src/screens/Register';
 import Home from './src/screens/Home';
 import Profile from './src/screens/Profile';
 import EditProfile from './src/screens/Profile/edit';
+import TrilhaTeorica from './src/screens/TrilhaTeorica';
+import TrilhaPratica from './src/screens/TrilhaPratica';
 import { FontAwesome, FontAwesome5} from '@expo/vector-icons'; 
 
 function getHeaderTitle(route) {
@@ -60,8 +62,8 @@ function Tabs(){
         }}
         />
         <Tab.Screen 
-          name="Login" 
-          component={Login}
+          name="TrilhaTeorica" 
+          component={TrilhaTeorica}
           options={{
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
@@ -70,8 +72,8 @@ function Tabs(){
           }}
         />
         <Tab.Screen 
-          name="Pratica" 
-          component={Register}
+          name="TrilhaPratica" 
+          component={TrilhaPratica}
           options={{
             headerShown: false,
             tabBarIcon: ({ color, size }) => (

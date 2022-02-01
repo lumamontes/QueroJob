@@ -13,6 +13,7 @@ import Profile from './src/screens/Profile';
 import EditProfile from './src/screens/Profile/edit';
 import TrilhaTeorica from './src/screens/TrilhaTeorica';
 import TrilhaPratica from './src/screens/TrilhaPratica';
+import Area from './src/screens/Area';
 import { FontAwesome, FontAwesome5} from '@expo/vector-icons'; 
 
 function getHeaderTitle(route) {
@@ -132,6 +133,13 @@ function App() {
             options={{ title: 'Editar perfil'}}
             headerTint
         
+          />
+           <Stack.Screen 
+            name="Area" 
+            component={Area}  
+            options={({ route }) => ({
+              headerTitle: getHeaderTitle(route), headerShown: false,
+            })}     
           />
         </Stack.Navigator>
 

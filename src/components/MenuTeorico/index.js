@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity,FlatList} from 'react-native';
 
 export default function MenuTeorico(props) {
-    const [menus, setMenus] = useState({});
-    const LoadMenus = [];
-    const Options = [
+    const menus = [
         {
             title: 'Área',
             link: 'area'
@@ -23,27 +21,44 @@ export default function MenuTeorico(props) {
             link: 'portfolio'
         },
     ];
-
+  
     return (
         <View style={styles.container}>
-            <View>
-                <FlatList
-                    data={Options}
-                    keyExtractor={option => String(option.id)}
-                    showsVerticalScrollIndicator={false}
-                    renderItem={({ item: option }) =>
-                    (
-                        <TouchableOpacity onPress={() => navigation.navigate(props.link)}>
-                            <Text style={styles.title}>{props.title}</Text>
-                        </TouchableOpacity>
-                    )}
-                >
-                </FlatList> 
-            </View>
+            <FlatList
+                data={menus}
+                style={styles.menus}
+                keyExtractor={option => String(option.title)}
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item: option }) =>
+                (
+                    <TouchableOpacity style={styles.menu_option} onPress={() => navigation.navigate(option.link)}>
+                        <Text style={styles.title}>{option.title}</Text>
+                    </TouchableOpacity>
+                )}
+            >
+            </FlatList> 
         </View>
     )
 }
 
 const styles = StyleSheet.create({
- 
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
+    },
+    title: {
+        backgroundColor: 'red',
+        color: 'white',
+    },
+    menus: {
+        flexDirection: 'row',
+        backgroundColor: 'blue',
+    },
+    menu_option: {
+        width: '100%',
+        backgroundColor: 'green',
+        textAlign: 'center'
+    }
+
 });

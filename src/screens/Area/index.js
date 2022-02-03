@@ -13,6 +13,6 @@ export default function Area({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
 });

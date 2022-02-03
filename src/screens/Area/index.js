@@ -1,12 +1,46 @@
 import React from 'react';
 import Menu from '../../components/MenuTeorico';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList } from 'react-native';
 
 export default function Area({ navigation }) {
-    return (
+  const areaInfo = [
+    {
+        title: 'Desenvolvimento',
+        description: 'asdadadasdsadadasdadadadasdasdasdsada'
+    },
+    {
+        title: 'Cargos',
+        link: 'asdadadasdsadadasdadadadasdasdasdsada'
+    },
+    {
+        title: 'Faixa salarial',
+        link: 'asdadadasdsadadasdadadadasdasdasdsada'
+    },
+    {
+        title: 'Habilidades buscadas',
+        link: 'asdadadasdsadadasdadadadasdasdasdsada'
+    },
+  ];
+
+  return (
       <View style={styles.container}>
           <Menu />
-          <Text>Area</Text>
+          <View style={styles.area_infos}>
+            <FlatList
+                  data={areaInfo}
+                  style={styles.menus}
+                  keyExtractor={option => String(option.title)}
+                  showsVerticalScrollIndicator={false}
+                  renderItem={({ item: option }) =>
+                  (
+                    <View style={styles.about}>
+                      <Text style={styles.title}>{option.title}</Text>
+                      <Text style={styles.description}>{option.description}</Text>
+                    </View>
+                  )}
+              >
+            </FlatList>            
+          </View>
       </View>
     );
   }

@@ -10,7 +10,8 @@ export default function TrilhaTeorica({ navigation }) {
             title: 'Área',
             aulas: '1',
             progress: 0.9,
-            cardcolor: '#B66666'
+            cardcolor: '#B66666',
+            function: 'Area',
         },
         {
             id: '2',
@@ -47,7 +48,14 @@ export default function TrilhaTeorica({ navigation }) {
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item: option }) =>
                     (
-                        <TrilhaCard title={option.title} progress={option.progress} aulas={option.aulas} cardcolor={option.cardcolor}/>
+                        <TrilhaCard 
+                            title={option.title} 
+                            progress={option.progress} 
+                            aulas={option.aulas} 
+                            cardcolor={option.cardcolor}
+                            navigation={navigation}
+                            function={option.function}
+                        />
                     )}
                 >
                 </FlatList> 

@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
-import api from '../../services/api';
+import { StyleSheet, Text, View, Image, TouchableOpacity,FlatList} from 'react-native';
 
 export default function MenuTeorico(props) {
     const [menus, setMenus] = useState({});

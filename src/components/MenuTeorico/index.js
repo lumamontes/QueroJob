@@ -1,29 +1,45 @@
 
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import api from '../../services/api';
 
 export default function MenuTeorico(props) {
     const [menus, setMenus] = useState({});
     const LoadMenus = [];
+    const Options = [
+        {
+            title: 'Área',
+            link: 'area'
+        },
+        {
+            title: 'Currículo',
+            link: 'curriculo'
+        },
+        {
+            title: 'Vagas',
+            link: 'vagas'
+        },
+        {
+            title: 'Portfólio',
+            link: 'portfolio'
+        },
+    ];
 
     return (
         <View style={styles.container}>
             <View>
                 <FlatList
-                    data={rankings.slice(1, 25)}
-                    keyExtractor={ranking => String(ranking.id)}
+                    data={Options}
+                    keyExtractor={option => String(option.id)}
                     showsVerticalScrollIndicator={false}
-                    renderItem={({ item: ranking }) => 
+                    renderItem={({ item: option }) =>
                     (
-                    <View>
-                        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Area')}>
-                            <Text style={styles.title}>Portifólio</Text>
+                        <TouchableOpacity onPress={() => navigation.navigate(props.link)}>
+                            <Text style={styles.title}>{props.title}</Text>
                         </TouchableOpacity>
-                    </View>
                     )}
                 >
-                </FlatList>
+                </FlatList> 
             </View>
         </View>
     )

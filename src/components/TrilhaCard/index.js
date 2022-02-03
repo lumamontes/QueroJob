@@ -5,7 +5,7 @@ import * as Progress from 'react-native-progress';
 
 export default function TrilhaCard(props) {
   return (
-    <TouchableOpacity style={[styles.container,{backgroundColor: `${props.cardcolor}` }]}>
+    <TouchableOpacity style={[styles.container,{backgroundColor: `${props.cardcolor}` }]} onPress={() => (props.navigation).navigate(props.function)}>
       <View>
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.subtitle}>{props.aulas} aulas</Text>

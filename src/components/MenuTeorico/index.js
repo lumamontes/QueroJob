@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity,FlatList} from 'react-native';
 import api from '../../services/api';
 
 export default function MenuTeorico(props) {
@@ -11,7 +11,6 @@ export default function MenuTeorico(props) {
         <View style={styles.container}>
             <View>
                 <FlatList
-                    data={rankings.slice(1, 25)}
                     keyExtractor={ranking => String(ranking.id)}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item: ranking }) => 

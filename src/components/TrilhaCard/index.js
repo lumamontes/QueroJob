@@ -9,7 +9,6 @@ export default function TrilhaCard(props) {
       <View>
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.subtitle}>{props.aulas} aulas</Text>
-
         <Progress.Bar progress={props.progress} width={200} height={3} color={'#F9F6F6'} unfilledColor={'#C4C4C4'} borderColor={'transparent'}/>
       </View>
       <View>

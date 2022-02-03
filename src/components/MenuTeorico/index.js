@@ -26,7 +26,8 @@ export default function MenuTeorico(props) {
         <View style={styles.container}>
             <FlatList
                 data={menus}
-                style={styles.menus}
+                style={styles.menu_container}
+                horizontal={true}
                 keyExtractor={option => String(option.title)}
                 showsVerticalScrollIndicator={false}
                 renderItem={({ item: option }) =>
@@ -43,22 +44,12 @@ export default function MenuTeorico(props) {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        width: '100%',
-    },
-    title: {
-        backgroundColor: 'red',
-        color: 'white',
-    },
-    menus: {
-        flexDirection: 'row',
-        backgroundColor: 'blue',
+        backgroundColor: 'black',
     },
     menu_option: {
-        width: '100%',
-        backgroundColor: 'green',
-        textAlign: 'center'
+        backgroundColor: 'red',
+    },
+    title: {
+        color: 'white'
     }
-
 });

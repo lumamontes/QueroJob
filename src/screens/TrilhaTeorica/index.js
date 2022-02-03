@@ -37,7 +37,7 @@ export default function TrilhaTeorica({ navigation }) {
     ];
     return (
         <View style={styles.container}>
-            <View>
+            <View style={styles.text_container}>
                 <Text style={styles.title}>Trilhas</Text>
                 <Text style={styles.area_title}>Desenvolvimento</Text>
             </View>
@@ -73,8 +73,16 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         color: '#727272',
-        marginBottom: 20,
-        fontFamily: 'Roboto_700Bold'
+        marginBottom: 10,
+        fontFamily: 'Roboto_700Bold',
+    },
+    text_container: {
+        width: '80%',
+        height: '100%',
+        justifyContent: 'center',
+        flex: 0.5,
+        paddingTop: 20
+
     },
     area_title: {
         fontSize: 18,

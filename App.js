@@ -3,7 +3,7 @@ import { NavigationContainer,getFocusedRouteNameFromRoute } from '@react-navigat
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
-  SafeAreaView, StyleSheet
+  SafeAreaView, StyleSheet,Text
 } from 'react-native'
 import Landing from './src/screens/Landing';
 import Login from './src/screens/Login';
@@ -137,9 +137,8 @@ function App() {
            <Stack.Screen 
             name="Area" 
             component={Area}  
-            options={({ route }) => ({
-              headerTitle: getHeaderTitle(route), headerShown: false,
-            })}     
+            options={{ headerShown: false
+             }} 
           />
         </Stack.Navigator>
 

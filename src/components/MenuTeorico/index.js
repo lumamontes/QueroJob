@@ -33,11 +33,6 @@ const styles = StyleSheet.create({
         height: '70%',
         justifyContent: 'space-around'
     },
-    menu_option: {
-        backgroundColor: 'red',
-        marginHorizontal: 10,
-
-    },
     title: {
         color: '#1E5128',
         fontSize: 24,

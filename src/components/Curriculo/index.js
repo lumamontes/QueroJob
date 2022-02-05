@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Animated, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+import AulasCard from '../AulasCard';
+import ArtigosCard from '../ArtigoCard';
 const {width, height} = Dimensions.get('screen');
 
 const Options = [
     {
         id: '1',
         nome_aula: 'Introdução',
-        link_aula: '',
+        link_aula: 'E9AnnlT14Ck',
         foto_aula: ''
     },
     {
@@ -28,20 +30,7 @@ const Options = [
 const artigos = [
     {
         id: '1',
-        nome_aula: 'Introdução',
-        link_aula: '',
-        foto_aula: ''
-    },
-    {
-        id: '2',
-        nome_aula: 'Introdução2',
-        link_aula: '',
-        foto_aula: ''
-    },
-
-    {
-        id: '3',
-        nome_aula: 'Conclusão',
+        titulo: 'Dicas para currículo',
         link_aula: '',
         foto_aula: ''
     },
@@ -50,38 +39,36 @@ const artigos = [
 export default function Curriculo(props) {
     return (
         <View style={styles.menu_container}>
-            <View>
-
+             <View style={styles.content_container}>
                 <Text style={styles.title}>Aulas</Text>
                 <FlatList
                     data={Options}
                     keyExtractor={item => item.id}
-                    numColumns={Options.length}
+                    scrollEnabled={true}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) =>
-                    (<View style={styles.container}>
-                        <Text>{item.nome_aula}</Text>
-                    </View>
+                    (<AulasCard link={item.link_aula
+                    
+                    } />
                     )}
                 >
                 </FlatList>
             </View>
-
             <View>
                 <Text style={styles.title}>Artigos</Text>
                 <FlatList
-                    data={Options}
+                    data={artigos}
                     keyExtractor={item => item.id}
-                    numColumns={Options.length}
+                    scrollEnabled={true}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) =>
-                    (<View style={styles.container}>
-                        <Text>{item.nome_aula}</Text>
-                    </View>
+                    (<ArtigosCard artigo_title={item.titulo
+                    } />
                     )}
-                >
+                    >
                 </FlatList>
             </View>
+
         </View>
 
     )
@@ -100,10 +87,14 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
 
     },
+    content_container: {
+        marginBottom: 30
+    },
     title: {
         color: '#4E9F3D',
         fontSize: 24,
-        fontFamily: 'Roboto_700Bold'
+        fontFamily: 'Roboto_700Bold',
+        marginBottom: 10
     },
     menu_container: {
         height: '30%',

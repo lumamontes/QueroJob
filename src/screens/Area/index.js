@@ -104,6 +104,7 @@ export default function Area({ navigation }) {
         ref={ref}
         data={data}
         horizontal
+        // scrollEnabled={false}
         showsHorizontalScrollIndicator={false}
         pagingEnabled
         bounces={false}

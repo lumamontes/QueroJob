@@ -14,6 +14,8 @@ import EditProfile from './src/screens/Profile/edit';
 import TrilhaTeorica from './src/screens/TrilhaTeorica';
 import TrilhaPratica from './src/screens/TrilhaPratica';
 import Area from './src/screens/Area';
+import PerguntaDia from './src/screens/PerguntaDia';
+import Respostas from './src/screens/Respostas';
 import { FontAwesome, FontAwesome5} from '@expo/vector-icons'; 
 
 function getHeaderTitle(route) {
@@ -139,6 +141,19 @@ function App() {
             component={Area}  
             options={{ headerShown: false
              }} 
+          />
+          <Stack.Screen 
+            name="PerguntaDia" 
+            component={PerguntaDia}  
+            options={{ title: 'Pergunta do dia', headerTransparent: true}}
+            headerTitleStyle={{ color: '#4E9F3D', fontSize: 24, fontFamily: 'Roboto_700Bold' }}
+            headerTintColor='#4E9F3D'
+          />
+
+          <Stack.Screen 
+            name="Respostas" 
+            component={Respostas}  
+            options={{ title: 'Respostas', headerTransparent: true}}
           />
         </Stack.Navigator>
 

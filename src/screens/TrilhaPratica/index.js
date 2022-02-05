@@ -1,7 +1,8 @@
 import React from 'react';
-import Entrevista from '../../components/Entrevista';
 import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList, Animated, Dimensions } from 'react-native';
 import { validateYupSchema } from 'formik';
+import Entrevista from '../../components/Entrevista';
+import EmBreve from '../../components/EmBreve';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -10,7 +11,7 @@ export default function Area({ navigation }) {
     Entrevistas:
       <Entrevista navigation={navigation} />,
     Desafios:
-      <Entrevista />
+      <EmBreve />
   };
 
 

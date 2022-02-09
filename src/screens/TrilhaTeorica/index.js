@@ -8,7 +8,7 @@ export default function TrilhaTeorica({ navigation }) {
         {
             id: '1',
             title: 'Área',
-            aulas: '1',
+            aulas: '2',
             progress: 0.9,
             cardcolor: '#B66666',
             function: 'Area',
@@ -16,23 +16,26 @@ export default function TrilhaTeorica({ navigation }) {
         {
             id: '2',
             title: 'Currículo',
-            aulas: '12',
+            aulas: '2',
             progress: 0.4,
-            cardcolor: '#3F8FA8'
+            cardcolor: '#3F8FA8',
+            function: 'Area',
         },
         {
             id: '3',
             title: 'Vagas',
-            aulas: '10',
+            aulas: '2',
             progress: 0.6,
-            cardcolor: '#267B19'
+            cardcolor: '#267B19',
+            function: 'Area',
         },
         {
             id: '4',
             title: 'Portfólio',
-            aulas: '10',
+            aulas: '2',
             progress: 0.6,
-            cardcolor: '#B66666'
+            cardcolor: '#B66666',
+            function: 'Area',
         },
     ];
     return (

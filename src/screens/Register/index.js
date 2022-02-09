@@ -91,9 +91,12 @@ export default function Register({ navigation }) {
                                 {formikProps.isSubmitting ? (
                                     <ActivityIndicator size="small" color="#4E9F3D" />
                                 ) : (
-                                    <TouchableOpacity title="Submit" onPress={formikProps.handleSubmit} style={
+                                    <TouchableOpacity title="Submit" onPress={() => navigation.navigate('Home')} style={
                                         styles.register_button
                                     }>
+                                        {/* <TouchableOpacity title="Submit" onPress={formikProps.handleSubmit} style={
+                                        styles.register_button
+                                    }> */}
                                         <Text style={styles.text_button_register}>Cadastre-se</Text>
                                     </TouchableOpacity>
                                 )}

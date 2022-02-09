@@ -5,18 +5,18 @@ import {
 // import { View } from 'react-native-web';
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Progress from 'react-native-progress';
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     // <SafeAreaView>
     <View style={styles.container}>
       <View style={styles.home_container}>
         <Text style={styles.welcome_title}>Olá, Bruna</Text>
-        <TouchableOpacity style={styles.question_container}>
+        <TouchableOpacity  onPress={() => navigation.navigate('PerguntaDia')} style={styles.question_container}>
           <MaterialCommunityIcons name="file-question" size={24} color="#4E9F3D" />
           <Text style={styles.text_question}>Pergunta do dia</Text>
           <AntDesign name="right" size={24} color="#4E9F3D" />
         </TouchableOpacity>
-        <View style={styles.card_container}>
+        <TouchableOpacity  onPress={() => navigation.navigate('Area')} style={styles.card_container}>
           <Text style={styles.title}>Continuar trilha</Text>
           <View style={styles.card}>
             <Image
@@ -28,14 +28,15 @@ export default function Home() {
             <View style={styles.card_content}>
               <View style={styles.card_texts}>
                 <Text style={styles.card_title}>Desenvolvimento </Text>
-                <Text style={styles.card_subtitle}>Currículo </Text>
+                <Text style={styles.card_subtitle}>Área</Text>
               </View>
-              <Pressable style={styles.pressable} onPress={() => setModalVisible(true)}>
+              <View style={styles.pressable}>
+              {/* <Pressable style={styles.pressable} onPress={() => setModalVisible(true)}> */}
                 <AntDesign name="caretright" size={20} color="#fff" />
-              </Pressable>
+              </View>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={styles.card_container}>
           <Text style={styles.title}>Meu progresso</Text>
           <View style={{ display: 'flex', width: '100%' }}>

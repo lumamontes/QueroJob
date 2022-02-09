@@ -11,11 +11,6 @@ const perguntas = [
         data_pergunta: '21/06',
         titulo: 'Qual foi sua maior conquis...',
     },
-    {
-        id: '2',
-        data_pergunta: '21/06',
-        titulo: 'Qual foi sua maior conquis...',
-    },
 ]
 
 export default function Entrevista(props) {

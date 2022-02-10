@@ -9,7 +9,7 @@ const Options = [
     {
         id: '1',
         nome_aula: 'Introdução',
-        link_aula: 'E9AnnlT14Ck',
+        link_aula: '3eo-2jeS2gM',
         foto_aula: ''
     },
     {
@@ -62,8 +62,8 @@ export default function Curriculo(props) {
                     scrollEnabled={true}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) =>
-                    (<ArtigosCard artigo_title={item.titulo
-                    } />
+                    (<ArtigosCard artigo_title={item.titulo 
+                    } link="https://blog.geekhunter.com.br/curriculo-programador/" />
                     )}
                     >
                 </FlatList>

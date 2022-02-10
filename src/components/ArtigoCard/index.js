@@ -1,12 +1,12 @@
 
 
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity,Linking } from 'react-native';
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function ArtigosCards(props) {
     return (
-        <TouchableOpacity style={styles.question_container}>
+        <TouchableOpacity style={styles.question_container} onPress={() => Linking.openURL(props.link) }>
             <MaterialCommunityIcons name="file-question" size={20} color="#4E9F3D" />
             <Text style={styles.text_question}>{props.artigo_title}</Text>
             <AntDesign name="right" size={20} color="#4E9F3D" />

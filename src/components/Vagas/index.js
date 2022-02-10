@@ -9,7 +9,7 @@ const Options = [
     {
         id: '1',
         nome_aula: 'Introdução',
-        link_aula: 'E9AnnlT14Ck',
+        link_aula: 'e_0yQQ9Bksg',
         foto_aula: ''
     },
 ]
@@ -17,8 +17,8 @@ const Options = [
 const artigos = [
     {
         id: '1',
-        titulo: 'Dicas para currículo',
-        link_aula: '',
+        titulo: 'Dicas para entrevistas',
+        link: 'https://coodesh.com/blog/candidates/dicas/entrevista-tecnica-para-desenvolvedores',
         foto_aula: ''
     },
 ]
@@ -50,7 +50,7 @@ export default function Curriculo(props) {
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) =>
                     (<ArtigosCard artigo_title={item.titulo
-                    } />
+                    } link={item.link}/>
                     )}
                     >
                 </FlatList>
